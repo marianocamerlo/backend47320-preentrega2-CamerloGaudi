@@ -1,0 +1,51 @@
+<h1>Listado de productos real time</h1>
+
+<h2>Crear producto</h2>
+<form
+  id="createProductForm"
+  action="/upload"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <label for="title">Nombre</label>
+  <input type="text" name="title" placeholder="Nombre" />
+  <br />
+  <label for="description">Descripción</label>
+  <input type="text" name="description" placeholder="Descripción" />
+  <br />
+  <label for="price">Precio</label>
+  <input type="number" name="price" placeholder="Precio" />
+  <br />
+  <label for="image">Imagen</label>
+  <input type="file" name="image" />
+  <br />
+  <label for="code">Código</label>
+  <input type="text" name="code" placeholder="Código" />
+  <br />
+  <label for="stock">Stock</label>
+  <input type="number" name="stock" placeholder="Stock" />
+  <br />
+  <label for="category">Categoría</label>
+  <select name="category">
+    <option value="bowls">Bowls</option>
+    <option value="cups">Cups</option>
+    <option value="jars">Jars</option>
+    <option value="plantPots">Plant Pots</option>
+    <option value="plates">Plates</option>
+    <option value="sushi">Sushi</option>
+  </select>
+  <br />
+  <label for="status">status</label>
+  <select name="status" id="statusBox">
+    <option value="available">Disponible</option>
+    <option value="unavailable">No Disponible</option>
+  </select>
+  <br />
+  <button type="submit"> Agregar Producto </button>
+</form>
+
+<h2>Listado de productos</h2>
+<ul id="productsDisplay"></ul>
+
+<script src="socket.io/socket.io.js"></script>
+<script src="js/realTimeProducts.js"></script>
